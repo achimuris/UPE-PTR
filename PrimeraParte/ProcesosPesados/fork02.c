@@ -6,11 +6,8 @@
 int main(int argc, char const *argv[])
 {
     pid_t pid_devuelto;
-    int unaVariableEntera;
     printf ("Soy %d\n", getpid());
 
-    printf("Por solicitud de Nicolas\n");
-    unaVariableEntera=4;
     pid_devuelto=fork();
 
 
@@ -19,9 +16,10 @@ int main(int argc, char const *argv[])
     //Código del PADRE
     if (pid_devuelto != 0)
     {
-        unaVariableEntera = 6;
         printf("Soy el padre %d, cree a %d. Valor de pid_devuelto: %d\n", getpid(), pid_devuelto, pid_devuelto);
         sleep(1);
+
+        //Esperamos a que finalice el hijo.
         waitpid(pid_devuelto, NULL, 0);
         
     }
