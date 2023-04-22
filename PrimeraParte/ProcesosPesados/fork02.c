@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 
     pid_devuelto = fork();
 
-    printf("Por solicitud de Nicolas. Mi PID es %d\n", getpid());
+    printf("Por solicitud de Gerardo. Mi PID es %d\n", getpid());
 
     // Código del PADRE
     if (pid_devuelto != 0)
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
         sleep(1);
 
         // Esperamos a que finalice el hijo.
-        waitpid(pid_devuelto, NULL, 0);
+        //waitpid(pid_devuelto, NULL, 0);
     }
     else
     {
