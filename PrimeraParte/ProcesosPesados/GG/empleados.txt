@@ -1,0 +1,6 @@
+1	pedro	22
+2	juan	56
+3	marcos	42
+4	julio	53
+5	fernando	60
+6	maria	49
