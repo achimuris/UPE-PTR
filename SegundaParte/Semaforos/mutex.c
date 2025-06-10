@@ -8,7 +8,7 @@ pthread_mutex_t m= PTHREAD_MUTEX_INITIALIZER;
 
 void *hilo1(void *arg){
 	int i;
-	for (i=0; i<1000; i++) {
+	for (i=0; i<100000; i++) {
 		pthread_mutex_lock(&m);
 		V= V + 1;
 		pthread_mutex_unlock(&m);
@@ -17,7 +17,7 @@ void *hilo1(void *arg){
 
 void *hilo2(void *arg) {
 	int i;
-	for (i=0; i<1000; i++) {
+	for (i=0; i<100000; i++) {
 		pthread_mutex_lock(&m);
 		V = V - 1;
 		pthread_mutex_unlock(&m);

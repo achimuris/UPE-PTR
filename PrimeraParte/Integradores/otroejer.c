@@ -33,9 +33,10 @@ int main()
 		while (!feof(arch))	{
 
             fgets(caracteres, sizeof(int), arch);
-
             a = atoi(caracteres);
+
 			//fread((void *)&a, sizeof(int), 1, arch);
+            
 	
 			printf("data: %d\n", a);
 

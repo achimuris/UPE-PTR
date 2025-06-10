@@ -13,8 +13,9 @@ static void * funcion1(void *arg)
     for(int i = 0; i < NR_LOOP; i++)    
     {
         sem_wait(&semaforo1);
-        //Sección crítica
+        //Inicio Sección crítica Hilo 1
         contador++;
+        //Fin Sección crítica Hilo 1
         sem_post(&semaforo1);
     }
     printf("Termino el primero\n");
@@ -26,7 +27,9 @@ static void * funcion2(void *arg)
     for(int i = 0; i < NR_LOOP; i++)    
     {
         sem_wait(&semaforo1);
+        //Inicio Sección crítica Hilo 2
         contador--;
+        //Fin Sección crítica Hilo 2
         sem_post(&semaforo1);
     }
     printf("Termino el segundo \n");

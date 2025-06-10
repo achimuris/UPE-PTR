@@ -17,9 +17,7 @@ int main(int argc, char const *argv[])
     
     
     printf("cantidad de parametros: %d \n", argc);
-
-    sleep(5);
-
+    sleep(6);
 
     return 0;
 }

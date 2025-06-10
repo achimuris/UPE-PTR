@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <string.h>
 
-#define STORAGE_ID "/SHM_TEST_2025"          //Nombre del objeto memoria compartida
-#define STORAGE_SIZE 32                      //Tamaño de la memoria compartida
-#define DATA "¡Hola Mundo! Desde PID %d"     //Prototipo de lo que queremos "almacenar" en la memoria compartida
+#define STORAGE_ID "/CURSADA_PTR_UPE"       //Nombre del objeto memoria compartida
+#define STORAGE_SIZE 10                     //Tamaño de la memoria compartida
+#define DATA "¡Hola Mundo! Desde PID %d UPE"     //Prototipo de lo que queremos "almacenar" en la memoria compartida
 
 int main(int argc, char *argv[])
 {
@@ -16,13 +16,12 @@ int main(int argc, char *argv[])
 	pid_t pid;
 	void *addr;
 	char data[STORAGE_SIZE];
-	
 
 	pid = getpid();
-	sprintf(data, DATA, pid);  //Si el pid es 15... en data tendremos = "¡Hola Mundo! Desde PID 15"
+	sprintf(data, DATA, pid);  //Si el pid es 15... en data tendremos = "Hola Mundo! Desde PID 15"
 
 	// crea y abre un objeto de memoria compartida nuevo, o abre una objeto existente.
-	fd = shm_open(STORAGE_ID, O_RDWR | O_CREAT | O_RDONLY, S_IRUSR | S_IWUSR);
+	fd = shm_open(STORAGE_ID, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		perror("Error set.c: shm_open");

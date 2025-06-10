@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#define STORAGE_ID "/SHM_TEST" //Nombre del objeto memoria compartida
+#define STORAGE_ID "/SHM_TEST_2025" //Nombre del objeto memoria compartida
 #define STORAGE_SIZE 32        //Tamaño de la memoria compartida
 
 int main(int argc, char *argv[])
@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	char data[STORAGE_SIZE];
 	pid_t pid;
 	void *addr;
+	
 
 	pid = getpid();
 

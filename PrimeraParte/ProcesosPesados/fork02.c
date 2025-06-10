@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
         sleep(1);
 
         // Esperamos a que finalice el hijo.
-        //waitpid(pid_devuelto, NULL, 0);
+        waitpid(pid_devuelto, NULL, 0);
     }
     else
     {
